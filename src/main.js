@@ -23,6 +23,7 @@ const input = searchForm.elements.input.value;
 searchPhoto (input)
   .then ((data)=>
   list.insertAdjacentHTML("beforeend",createMarkup(data.hits)))
+  .catch((error)=> console.log(error))
 }
 
 const lightbox = new SimpleLightbox('.gallery a', {  
