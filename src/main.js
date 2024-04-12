@@ -26,7 +26,7 @@ searchPhoto (input)
 }
 
 const lightbox = new SimpleLightbox('.gallery a', {  
-    sourceAttr: "href",
+    
     captionsData: "alt",
     captionPosition:"bottom",
     captionDelay: 250
