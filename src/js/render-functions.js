@@ -16,7 +16,7 @@ const lightbox = new SimpleLightbox('.gallery a', {
     captionDelay: 200
   });
 
-
+  refresh ();
 
 
 function createMarkup (arr) {
