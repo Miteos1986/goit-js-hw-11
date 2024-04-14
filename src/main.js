@@ -24,7 +24,7 @@ function handleSubmit (event){
 event.preventDefault();
 const input = searchForm.elements.picture.value;
 searchForm.reset();
-loaderOn ();
+loader.classList.remove("hide");
 searchPhoto (input)
 
   .then ((data)=>{
@@ -49,9 +49,7 @@ searchPhoto (input)
     message: 'Sorry, there are no images matching your search query. Please try again!'
     });
   })
-  function loaderOn (){
-    loader.classList.remove("hide")
-  }
+  
   function loaderOff (){
     loader.classList.add("hide")
   }
