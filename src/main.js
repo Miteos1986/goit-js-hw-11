@@ -52,6 +52,10 @@ searchPhoto (input)
     message: 'Sorry, there are no images matching your search query. Please try again!'
     });
   })
+  .finally(()=>{
+    loaderOff();
+  }
+);
   
   function loaderOff (){
     loader.classList.add("hide")
