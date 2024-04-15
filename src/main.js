@@ -22,13 +22,15 @@ const loader = document.querySelector(".hide")
 searchForm.addEventListener("submit", handleSubmit);
 function handleSubmit (event){
 event.preventDefault();
+loader.classList.remove("hide");
+list.innerHTML="";
 const input = searchForm.elements.picture.value;
 searchForm.reset();
-loader.classList.remove("hide");
 searchPhoto (input)
 
   .then ((data)=>{
     if (data.hits.length === 0) {
+      loaderOff();
       iziToast.error({
         title: 'Error',
         message: 'Sorry, there are no images matching your search query. Please try again!'
@@ -36,13 +38,14 @@ searchPhoto (input)
     } else 
    { 
     // console.log("data",data);
-   loaderOff();
-   list.innerHTML="";
+   
+ 
   list.insertAdjacentHTML("beforeend",createMarkup(data.hits));
   lightbox.refresh();}
 })
 
   .catch((error) => {console.log("error",error);
+  
   loaderOff();
     iziToast.error({
     title: 'Error',
@@ -52,6 +55,7 @@ searchPhoto (input)
   
   function loaderOff (){
     loader.classList.add("hide")
+    
   }
 
 }
